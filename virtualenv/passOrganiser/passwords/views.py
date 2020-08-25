@@ -25,7 +25,19 @@ def SavedPassword(request):
 def storePass(request):
     context = {}
 
+    if request.method == 'POST':
+        site = request.POST.get('site')
+
+        print(request.POST.get('site'))
+        print(request.POST.get('username'))
+        print(request.POST.get('password'))
+
 
         
 
     return render(request, 'passwords/storePassword.html')
+
+
+
+
+# def hashPassword():
