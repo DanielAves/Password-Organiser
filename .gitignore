@@ -30,6 +30,7 @@ venv/bin
 venv/include
 venv/Lib
 venv/Scripts
+virtualenv/passOrganiser/passwords/migrations
 
 
 # PyInstaller
