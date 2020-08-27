@@ -18,6 +18,8 @@ def HomePage(request):
 def SavedPassword(request):
     passwords = Password.objects.all()
 
+
+
     if request.method == 'POST':
         site = request.POST.get('site')
 

@@ -19,9 +19,15 @@
     width: 170px;
 }
 
+
 /* #password_field{
     padding-left: ;
 } */
+
+#details_input, #username, #password_field, #generate_button,#save_button{
+    width: 10%;
+
+}
 
 .save_details{
     padding-top:10%;
@@ -30,10 +36,17 @@
     justify-content: center;
 }
 
-input{
-    width: 30%;
+.savedPassField{
+    width: 10%;
+    position: absolute;
+    background-color: inherit;
+    outline: none;
 }
 
-/* #test-orders{
-    background-color: #4cb4c7;
+/* input[type=password]{
+    width: 10%;
+    position: absolute;
+    background-color: inherit;
+    outline: none;
+
 } */
