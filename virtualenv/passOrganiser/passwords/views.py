@@ -9,7 +9,7 @@ from cryptography.fernet import Fernet, InvalidToken
 from django.conf import settings
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib import messages
-from .forms import CreateUserForm
+#from .forms import CreateUserForm
 from django.contrib.auth import authenticate, login, logout
 import os
 
@@ -51,10 +51,15 @@ def Register(request):
 def SavedPassword(request):
     passwords = Password.objects.all()
 
-
+    print("here in saved passwords")
 
     if request.method == 'POST':
+        print("here in post request method")
         site = request.POST.get('site')
+        print(site)
+        print(request.POST.get('site'))
+        print(request.POST.get('username'))
+        print(request.POST.get('password'))
 
         
     currentUser = request.user 

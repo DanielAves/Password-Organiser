@@ -31,7 +31,7 @@ venv/include
 venv/Lib
 venv/Scripts
 virtualenv/passOrganiser/passwords/migrations
-virtualenv/passOrganiser/passwords/PassOrganiser/settings.py
+virtualenv/passOrganiser/PassOrganiser/settings.py
 
 
 # PyInstaller
