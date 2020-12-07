@@ -65,7 +65,7 @@ def SavedPassword(request):
     currentUser = request.user 
     #print(request.user.password)
 
-    return render(request,'passwords/savedPassword.html', {'list':passwords})
+    return render(request,'passwords/savedPassword2.html', {'list':passwords})
 # Create your views here.
 
 
