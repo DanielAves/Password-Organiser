@@ -1,4 +1,5 @@
 from django.db import models
+from django.contrib.auth.models import User
 
 
 class Customer(models.Model):
@@ -12,9 +13,12 @@ class Customer(models.Model):
         return self.name
 
 
-class Password(models.Model):
+class SiteDetails(models.Model):
     site =  models.CharField(max_length=200)
-    salt = models.CharField(max_length=16)
-    encryptedPass = models.CharField(max_length=200)
-    customer = models.ForeignKey (Customer, on_delete = models.CASCADE)
+    username = models.CharField(max_length=200)
+    salt = models.BinaryField(max_length=32)
+    encryptedPass = models.BinaryField(max_length=200)
+    user = models.ForeignKey (User, on_delete = models.CASCADE)
 
+    def __str__(self):
+        return self.id
