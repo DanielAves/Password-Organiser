@@ -1,43 +1,61 @@
-
 {% extends 'passwords/main.html' %}
-{% load static %}
+{% load static %} 
 {% block content %} 
-<!-- <head>
-  <link rel="stylesheet" type="text/css" href="{% static 'css/main.css' %}">
-</head> -->
 
-<div id="login-box" >
-  
-    <form method = "POST" action=""> 
-    {% csrf_token %} 
+<html>
+	<body> 
+		<div class="form-group"> 
+			<form method = "POST" > 
+				{% csrf_token %} 
+				<div id = "register-box">
+					<div class = "mx-auto" style = "width: 300px;">
+						<div class="form-group">
+							<label for="username">Username</label>
+							{{form.username}}
+            			</div>
+            			<div class="form-group">
+							<label for="emailInput">Email</label>
+							{{form.email}}
+						</div>
+            			<div class="form-group">
+							<label for="password1">Password</label>
+							{{form.password1}}
+						</div>
+            			<div class="form-group">
+							<label for="confirmPassword">Confirm Password</label>
+							{{form.password2}}
+						</div>
+						<br>
+						<div class="d-flex justify-content-center">
+							<button type="submit" class="btn btn-primary">Sign up!</button>
+						</div>
 
-    <div class="center">
-      <h1>Sign up</h1>
-      
-      <!-- <input type="text" name="username" placeholder="Username" /> -->
-      {{form.username}}
-      <!-- <input type="text" name="email" placeholder="E-mail" /> -->
-      {{form.email}}
-      <!-- <input type="password" name="password" placeholder="Password" /> -->
-      {{form.password1}}
-      <!-- <input type="password" name="password2" placeholder="Retype password" /> -->
-      {{form.password2}}
-      
-      <input type="submit" name="signup_submit" value="Sign me up" />
-
-      {{form.errors}}
-    </div>
-    
-  </div>
+						<div>
+							{% for field in form %}
+								{% for error in field.errors %}
+									<div class="alert alert-info" id = "infoAlert">
+										<strong>{{ error|escape }}</strong>
+									</div>
+								{% endfor %}
+							{% endfor %}
+						</div>
+						
+						
 
 
-<script>
-    var form_fields = document.getElementsByTagName('input') 
-    form_fields[1].placeholder='Username';
-    form_fields[2].placeholder='Email';
-    form_fields[3].placeholder='Password';
-    form_fields[4].placeholder='Retype Password';
-</script>
+						<div class="mt-4">
+							<div class="d-flex justify-content-center links">
+								Already have an account? <a href="{% url 'login' %}"
+								class="ml-2">Login</a>
+							</div>
+						</div>
+					</div>
+				</div>
+			</form>	
+		</div> 
+	</body>
+</html>
+
 
 {% endblock %}
 

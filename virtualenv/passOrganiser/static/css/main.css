@@ -8,7 +8,22 @@
   border-radius: 2px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
 }
+
+#register-box {
+  position: relative;
+  margin: 5% auto;
+  padding-top: 5px;
+  width: 400px;
+  height: auto;
+  background: rgb(248, 248, 248);
+  border-radius: 2px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
+}
  
+
+#infoAlert{
+  margin-top: 20px;
+}
 
 #messages{
   text-align: center;
