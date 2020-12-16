@@ -9,4 +9,5 @@ urlpatterns = [
     path('register/', views.Register, name="register"),
     path('savedPassword/', views.SavedPassword, name="savedPassword"),
     path('storePassword/', views.storePass, name="storePass"),
+    path('deleteDetails/<str:pk>/', views.DeleteDetails, name="deleteDetails")
 ]

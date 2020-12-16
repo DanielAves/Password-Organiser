@@ -15,7 +15,8 @@ from django.contrib.auth.decorators import login_required
 import os
 
 class passwordDetails:
-    def __init__(self,site = "",salt = "",encryptedPass = "",userName = ""):
+    def __init__(self,id = "", site = "",salt = "",encryptedPass = "",userName = ""):
+        self.id = id
         self.site = site
         self.salt = salt
         self.encryptedPass = encryptedPass
@@ -172,7 +173,7 @@ def decryptPassword(request):
 
 
             print(decrypted)
-            detailsList.append(passwordDetails(each.site,each.salt,decrypted.decode(),each.username))
+            detailsList.append(passwordDetails(each.id,each.site,each.salt,decrypted.decode(),each.username))
 
             
         except InvalidToken as e:
@@ -237,3 +238,9 @@ def encryptPassword(request,enteredPassword):
 
 
     return passInstance
+
+
+def DeleteDetails(request, pk):
+    details = SiteDetails.objects.filter(id = pk)
+    details.delete()
+    return redirect(SavedPassword)

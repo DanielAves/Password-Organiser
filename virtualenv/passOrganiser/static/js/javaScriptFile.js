@@ -21,9 +21,10 @@ $(document).ready(function () {
 
 
 
-    $("table.table-striped").on("click", ".ibtnSave", function (event) {
-        // $(this).closest("tr").remove();       
-        // counter -= 1
+    $("table.table-striped").on("click", ".ibtnDel", function (event) {
+        //$(this).closest("tr").remove();  
+        console.log(this)  
+        console.log("in this function")
     });
 
 
@@ -39,6 +40,11 @@ function saveDetails(){
 
     document.getElementById("myForm").submit();
   }
+
+function deleteDetails(){
+    console.log("I'm here")
+
+}
 
 function calculateRow(row) {
     var price = +row.find('input[name^="price"]').val();
