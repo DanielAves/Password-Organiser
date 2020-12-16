@@ -108,7 +108,7 @@ def SavedPassword(request):
 
        
     currentUser = request.user
-    emptyList = decryptPassword()
+    emptyList = decryptPassword(request)
     for obj in emptyList:
         print(obj.encryptedPass)
     #print(emptyList.encryptedPass)
@@ -144,8 +144,9 @@ def storePass(request):
 def storePassword():
     print("hello")
 
-def decryptPassword():
-    details = SiteDetails.objects.all()
+def decryptPassword(request):
+    currentUser = request.user
+    details = SiteDetails.objects.filter(user_id = currentUser.id)
     detailsList = []
     for each in details:
         test = each.salt

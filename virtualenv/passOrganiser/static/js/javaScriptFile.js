@@ -5,15 +5,15 @@ $(document).ready(function () {
 
     $("#addrow").on("click", function () {
         console.log("here");
-        var newRow = $("<tr>");
+        var newRow = $("<tr class='d-flex'>");
         var cols = "";
 
-        cols += '<td><input type="text" class="form-control" id="site" name="site"/></td>';
-        cols += '<td><input type="text" class="form-control" name="username"/></td>';
-        cols += '<td><input type="text" class="form-control" name="password"/></td>';
+        cols += '<td class="col-3"><input type="text" class="form-control" id="site" name="site"/></td>';
+        cols += '<td class="col-3"><input type="text" class="form-control" name="username"/></td>';
+        cols += '<td class="col-3"><input type="text" class="form-control" name="password"/></td>';
 
         // cols += '<td><input type="button" class="ibtnDel btn btn-md btn-danger "  value="Delete"></td>';
-        cols += '<td><input type="button" class="ibtnSave btn btn-primary" onclick="saveDetails()" type="submit" value="Save"></td>';
+        cols += '<td class="col-3"><input type="button" class="ibtnSave btn btn-primary" onclick="saveDetails()" type="submit" value="Save"></td>';
         newRow.append(cols);
         $("table.table-striped").append(newRow);
         counter++;
