@@ -8,12 +8,12 @@ $(document).ready(function () {
         var newRow = $("<tr class='d-flex'>");
         var cols = "";
 
-        cols += '<td class="col-3"><input type="text" class="form-control" id="site" name="site"/></td>';
-        cols += '<td class="col-3"><input type="text" class="form-control" name="username"/></td>';
-        cols += '<td class="col-3"><input type="text" class="form-control" name="password"/></td>';
+        cols += '<td class="col-lg"><input type="text" class="form-control" id="site" name="site"/></td>';
+        cols += '<td class="col-lg"><input type="text" class="form-control" name="username"/></td>';
+        cols += '<td class="col-lg"><input type="text" id=passwordField class="form-control" name="password"/></td>';
 
         // cols += '<td><input type="button" class="ibtnDel btn btn-md btn-danger "  value="Delete"></td>';
-        cols += '<td class="col-3"><input type="button" class="ibtnSave btn btn-primary" onclick="saveDetails()" type="submit" value="Save"></td>';
+        cols += '<td class="col-sm"><input type="button" class="btn btn-secondary btn-sm" onclick="generatePass()" value="Suggest Pass"> <input type="button" class="ibtnSave btn btn-primary btn-sm" onclick="saveDetails()" type="submit" value="Save"></td>'
         newRow.append(cols);
         $("table.table-striped").append(newRow);
         counter++;
@@ -46,15 +46,10 @@ function deleteDetails(){
 
 }
 
-function calculateRow(row) {
-    var price = +row.find('input[name^="price"]').val();
+function generatePass(){
+    var passField = document.getElementById("passwordField"); 
+    var randomPass = Math.random().toString(36).substring(2,15) + Math.random().toString(36).substring(2,15);
+    passField.value = randomPass;
 
 }
 
-function calculateGrandTotal() {
-    var grandTotal = 0;
-    $("table.table-striped").find('input[name^="price"]').each(function () {
-        grandTotal += +$(this).val();
-    });
-    $("#grandtotal").text(grandTotal.toFixed(2));
-}
