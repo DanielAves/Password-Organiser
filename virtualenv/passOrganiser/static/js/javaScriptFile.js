@@ -30,6 +30,24 @@ $(document).ready(function () {
 
 });
 
+function viewPassword(pass,id){
+    var field = document.getElementById(id);
+    var viewButton = document.getElementById("view"+ id)
+    var star = "*"
+    console.log(viewButton.value)
+    if (viewButton.value == "Hide"){
+        viewButton.value = "View"
+        field.innerText = pass.replace(/./g, '*');
+
+    }
+    else{
+        viewButton.value = "Hide"
+        field.innerText = pass
+    }
+
+    
+}
+
 function saveDetails(){
     // console.log("Hello world");
     // test = $(this).closest("tr").val();
@@ -41,6 +59,8 @@ function saveDetails(){
     document.getElementById("myForm").submit();
   }
 
+
+  
 function deleteDetails(){
     console.log("I'm here")
 
